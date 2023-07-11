@@ -20,7 +20,7 @@ public static class Helpers
     
     public static void Dump(this object obj)
     {
-        Console.WriteLine(JsonSerializer.Serialize(obj, JsonSerializerOptions));
+        JsonSerializer.Serialize(obj, JsonSerializerOptions).Print();
     }
 
     public static IntEnumerator GetEnumerator(this Range range)
