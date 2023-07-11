@@ -4,6 +4,14 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>FlurinBruehwiler.Helpers</PackageId>
+        <Version>0.1.0</Version>
+        <Authors>Flurin Bruehwiler</Authors>
+        <PackageLicenseUrl>MIT</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/FlurinBruehwiler/Helpers</RepositoryUrl>
+        <Description>
+            A few useful helper methods
+        </Description>
     </PropertyGroup>
 
 </Project>
