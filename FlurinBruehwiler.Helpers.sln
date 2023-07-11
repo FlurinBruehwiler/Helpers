@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{52DE48D3-F87A-4A8F-93ED-F9E05CF2B25C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{52DE48D3-F87A-4A8F-93ED-F9E05CF2B25C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlurinBruehwiler.Helpers", "FlurinBruehwiler.Helpers\FlurinBruehwiler.Helpers.csproj", "{586DD9FB-0588-4E0A-A162-7097A3133416}"
 EndProject
