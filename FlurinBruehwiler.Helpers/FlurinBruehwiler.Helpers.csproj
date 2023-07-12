@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>FlurinBruehwiler.Helpers</PackageId>
-        <Version>0.1.3</Version>
+        <Version>0.1.4</Version>
         <Authors>Flurin Bruehwiler</Authors>
         <PackageLicenseUrl>MIT</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/FlurinBruehwiler/Helpers</RepositoryUrl>

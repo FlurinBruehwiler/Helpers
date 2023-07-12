@@ -13,12 +13,12 @@ public static class Helpers
         }
     }
     
-    public static void Print(this object obj)
+    public static void Print(this object? obj)
     {
         Console.WriteLine(obj);
     }
     
-    public static void Dump(this object obj)
+    public static void Dump(this object? obj)
     {
         JsonSerializer.Serialize(obj, JsonSerializerOptions).Print();
     }
@@ -33,12 +33,12 @@ public static class Helpers
         return new IntEnumerator(new Range(0, number));
     }
 
-    public static bool IsNullOrEmpty(this string value)
+    public static bool IsNullOrEmpty([NotNullWhen(false)] this string? value)
     {
         return string.IsNullOrEmpty(value);
     }
     
-    public static bool IsNullOrWhiteSpace(this string value)
+    public static bool IsNullOrWhiteSpace([NotNullWhen(false)] this string? value)
     {
         return string.IsNullOrWhiteSpace(value);
     }
