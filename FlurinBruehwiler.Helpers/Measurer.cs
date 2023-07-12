@@ -5,12 +5,12 @@ namespace FlurinBruehwiler.Helpers;
 public class Measurer : IDisposable
 {
     private readonly string _message;
-    private readonly long _startTimeStamp;
+    private readonly Stopwatch _stopwatch;
     
     public Measurer(string message)
     {
         _message = message;
-        _startTimeStamp = Stopwatch.GetTimestamp();
+        _stopwatch = Stopwatch.StartNew();
     }
     
     public void Measure()
@@ -20,6 +20,6 @@ public class Measurer : IDisposable
     
     public void Dispose()
     {
-        Console.WriteLine($"{_message} completed in {Stopwatch.GetElapsedTime(_startTimeStamp).Milliseconds}ms");
+        Console.WriteLine($"{_message} completed in {_stopwatch.ElapsedMilliseconds}ms");
     }
 }
