@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>FlurinBruehwiler.Helpers</PackageId>
-        <Version>0.1.4</Version>
+        <Version>0.1.5</Version>
         <Authors>Flurin Bruehwiler</Authors>
         <PackageLicenseUrl>MIT</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/FlurinBruehwiler/Helpers</RepositoryUrl>
@@ -13,5 +13,9 @@
             A few useful helper methods
         </Description>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    </ItemGroup>
 
 </Project>
