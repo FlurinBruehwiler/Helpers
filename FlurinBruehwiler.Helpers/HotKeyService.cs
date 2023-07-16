@@ -1,8 +1,10 @@
 ﻿namespace FlurinBruehwiler.Helpers;
 
 
-public class HotKeyService : IDisposable
+public class HotKeyService : IDisposable, IHotKeyService
 {
+    public static HotKeyService Shared = new();
+    
     private readonly Dictionary<int, HotKey> _registerdHotkeys = new();
     private readonly Dictionary<int, HotKey> _hotKeysToRegister = new();
     private readonly List<int> _hotKeysToUnregister = new();

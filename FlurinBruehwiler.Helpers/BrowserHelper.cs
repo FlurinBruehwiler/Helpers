@@ -3,9 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace FlurinBruehwiler.Helpers;
 
-public static class BrowserHelper
+public class BrowserHelper : IBrowserHelper
 {
-    public static void OpenWebsite(string url)
+    public static BrowserHelper Shared = new();
+    
+    public void OpenWebsite(string url)
     {
         try
         {

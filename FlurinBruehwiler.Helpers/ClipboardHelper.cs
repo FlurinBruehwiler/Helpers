@@ -2,9 +2,11 @@
 
 namespace FlurinBruehwiler.Helpers;
 
-public static class ClipboardHelper
+public class ClipboardHelper : IClipboardHelper
 {
-    public static void Copy(string text)
+    public static ClipboardHelper Shared = new();
+    
+    public void Copy(string text)
     {
         if (!External.OpenClipboard(IntPtr.Zero))
         {
