@@ -1,7 +1,10 @@
 ﻿
 using FlurinBruehwiler.Helpers;
 
-ClipboardHelper.Shared.Read().Print();
+ClipboardHelper.Shared.Write("primary", "secondary");
+
+ClipboardHelper.Shared.Read().Dump();
+ClipboardHelper.Shared.Read(true).Dump();
 
 return;
 

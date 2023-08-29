@@ -2,6 +2,6 @@
 
 public interface IClipboardHelper
 {
-    public void Write(string text);
-    public string? Read();
+    public void Write(string text, string? secondaryText = null);
+    public string? Read(bool secondary = false);
 }

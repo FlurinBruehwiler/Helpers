@@ -7,7 +7,7 @@ public class ClipboardHelper : IClipboardHelper
 {
     public static ClipboardHelper Shared = new();
     
-    public void Write(string text)
+    public void Write(string text, string? secondaryText = null)
     {
         if (!External.OpenClipboard(IntPtr.Zero))
         {
@@ -24,10 +24,17 @@ public class ClipboardHelper : IClipboardHelper
             // _logger.LogError("Failed to set clipboard data.");
         }
 
+        if (secondaryText is not null)
+        {
+            var hMem2 = Marshal.StringToHGlobalUni(secondaryText);
+
+            External.SetClipboardData(0x0081, hMem2);
+        }
+
         External.CloseClipboard();
     }
 
-    public string? Read()
+    public string? Read(bool secondary = false)
     {
         if (!External.IsClipboardFormatAvailable(External.CF_UNICODETEXT))
             return null;
@@ -37,7 +44,7 @@ public class ClipboardHelper : IClipboardHelper
             if (!External.OpenClipboard(IntPtr.Zero))
                 return null;
 
-            var handle = External.GetClipboardData(External.CF_UNICODETEXT);
+            var handle = External.GetClipboardData(secondary ? 0x0081 : External.CF_UNICODETEXT);
             if (handle == IntPtr.Zero)
                 return null;
 
