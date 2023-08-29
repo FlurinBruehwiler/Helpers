@@ -2,5 +2,6 @@
 
 public interface IClipboardHelper
 {
-    public void Copy(string text);
+    public void Write(string text);
+    public string? Read();
 }

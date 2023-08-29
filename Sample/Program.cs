@@ -1,6 +1,10 @@
 ﻿
 using FlurinBruehwiler.Helpers;
 
+ClipboardHelper.Shared.Read().Print();
+
+return;
+
 using var _ = new Measurer("Main");
 
 var enumerable = Enumerable.Range(0, 10);

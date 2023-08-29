@@ -6,18 +6,38 @@ internal static class External
 {
     public const uint WmHotkey = 0x312;
     public const uint PM_REMOVE = 1;
+    public const uint CF_UNICODETEXT = 13U;
     
-    [DllImport("user32.dll")]
+    [DllImport("User32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool IsClipboardFormatAvailable(uint format);
+
+    [DllImport("User32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool OpenClipboard(IntPtr hWndNewOwner);
 
-    [DllImport("user32.dll")]
+    [DllImport("User32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool CloseClipboard();
+
+    [DllImport("Kernel32.dll", SetLastError = true)]
+    public static extern IntPtr GlobalLock(IntPtr hMem);
+
+    [DllImport("Kernel32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GlobalUnlock(IntPtr hMem);
+
+    [DllImport("Kernel32.dll", SetLastError = true)]
+    public static extern int GlobalSize(IntPtr hMem);
 
     [DllImport("user32.dll")]
     public static extern bool EmptyClipboard();
     
     [DllImport("user32.dll")]
     public static extern IntPtr SetClipboardData(uint uFormat, IntPtr hMem);
+    
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetClipboardData(uint uFormat);
     
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
